@@ -22,6 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
         // Exercise 1: Style each square
         square.classList.add("square");
 
+        // Exercise 3: Mouse enters the square
+        square.addEventListener("mouseenter", function () {
+            square.classList.add("hover");
+        });
+
+        // Exercise 3: Mouse leaves the square
+        square.addEventListener("mouseleave", function () {
+            square.classList.remove("hover");
+        });
+
         // Exercise 2: Handle clicks
         square.addEventListener("click", function () {
 
