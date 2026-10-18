@@ -55,10 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
         square.addEventListener("click", function () {
 
             // STEP A: Stop playing if somebody has already won
-            if (gameOver) {
+            if (gameOver || square.textContent !== "") {
                 return;
             }
-
             // STEP B: Display the current player's X or O
             square.textContent = currentPlayer;
 
