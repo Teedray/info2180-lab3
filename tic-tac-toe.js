@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
 
     const squares = document.querySelectorAll("#board div");
+    const newGameButton = document.querySelector(".btn");
+    const originalStatus = status.textContent;
 
     // X plays first
     let currentPlayer = "X";
@@ -108,5 +110,30 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
+    // Exercise 5: Restart the game
+    newGameButton.addEventListener("click", function () {
+
+        // Clear every square
+        squares.forEach(function (square) {
+
+            square.textContent = "";
+
+            square.classList.remove("X", "O", "hover");
+
+        });
+
+        // Reset the current player
+        currentPlayer = "X";
+
+        // Allow the game to start again
+        gameOver = false;
+
+        // Restore the original message
+        status.textContent = originalStatus;
+
+        // Remove the winning style
+        status.classList.remove("you-won");
+
+    });
 
 });
